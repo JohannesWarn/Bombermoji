@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      line-height: 0;
+    }
+    img {
+      width: 36px;
+    }
+    body {
+      font: 16pt "Futura", sans-serif;
+      
+      background: #334;
+      background: grey;
+
+      position: relative;
+    }
+    canvas {
+      position: absolute;
+      top: 50vh;
+      left: 50vw;
+      transform: translate(-50%, -50%);
+    }
+    h1 {
+      color: #ffdc5d;
+      text-shadow: 0 0.06em 0 black;
+      font-size: 3vw;
+      position: absolute;
+      top: 50vh;
+      left: 50vw;
+      transform: translate(-50%, -50%);
+    }
+    /*
+    canvas {
+      image-rendering: optimizeSpeed;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: -o-crisp-edges;
+      image-rendering: pixelated;
+      -ms-interpolation-mode: nearest-neighbor;
+    }
+    */
+  </style>
+  <title>💣😀</title>
+</head>
+<body>
+  <main>
+    <canvas id="game-canvas"></canvas>
+    <h1>PRESS BOMB TO JOIN</h1>
+  </main>
+  <script src="twemoji/twemoji.min.js"></script>
+  <script src="twemoji/random-emoji.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
