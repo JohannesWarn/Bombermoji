@@ -3,8 +3,12 @@
 <head>
   <meta charset="utf-8">
   <style>
+    body, html {
+      height: 100%;
+    }
     body {
       width: 24em;
+      min-height: 600px;
       margin: auto;
       font: 13pt sans-serif;
       
@@ -12,7 +16,7 @@
       color: white;
       text-shadow: 0 2px 0 black;
       
-      line-height: 1.45em;
+      line-height: 1.45;
       
       position: relative;
     }
@@ -43,6 +47,11 @@
       font-weight: bold;
       text-shadow: 0 0.06em 0 black;
     }
+    footer {
+      font-size: 0.75em;
+      position: absolute;
+      bottom: 1em;
+    }
   </style>
   <title>Bombermoji</title>
 </head>
@@ -62,5 +71,6 @@
       <a href="game.html?ts=40">play on bigger stage</a> · <a href="game.html?ts=120">play on smaller stage</a>
     </nav>
   </main>
+  <footer>Made by <a href="http://johanneswarn.com">Johannes Wärn</a>. <a href="https://github.com/JohannesWarn/bombermoji/">Open sourced</a> under <a href="LICENSE.txt">MIT</a>. <a href="http://twitter.github.io/twemoji/">Twemoji</a> by <a href="http://twitter.com">Twitter</a>, licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY</a> and <a href="twemoji/LICENSE.txt">MIT</a>.
 </body>
 </html>
