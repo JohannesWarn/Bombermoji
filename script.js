@@ -174,10 +174,14 @@ class Player {
           if (!object && this.bombsAvailable > 0) {
             //this.speedPower += 1;
             //this.updateMaxSpeed();
-            var bomb = new Object("bomb", Math.floor(this.x / ts), Math.floor(this.y / ts));
+            var bomb = new Object("bomb", xpos, ypos);
             bomb.player = this;
-            this.insideDropedBomb = bomb;
             this.bombsAvailable -= 1;
+            var playersInsideBomb = playersAt(this.x, this.y);
+            for (var i = 0; i < playersInsideBomb.length; i += 1) {
+              console.log(i);
+              playersInsideBomb[i].insideDropedBomb = bomb;
+            }
           }
         } else {
           this.randomizeEmoji();
@@ -607,6 +611,22 @@ function objectAt(x, y) {
       return object;
     }
   }
+}
+
+function playersAt(x, y) {
+  var xpos = Math.floor( x / ts );
+  var ypos = Math.floor( y / ts );
+  
+  var playersAtPos = [];
+  for (var i = 0; i < players.length; i++) {
+    var player = players[i];
+    var playerxpos = Math.floor( player.x / ts );
+    var playerypos = Math.floor( player.y / ts );
+    if (playerxpos == xpos && playerypos == ypos) {
+      playersAtPos.push(player);
+    }
+  }
+  return playersAtPos;
 }
 
 function restart() {
