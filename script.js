@@ -527,7 +527,18 @@ class Stage {
 }
 
 function main() {
-  if (keyIsDown[32]) {
+  var gamepadPressingStart = false;
+  var gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads : []);
+  for (var i = 0; i < gamepads.length; i += 1) {
+    var gamepad = gamepads[i];
+    if (gamepad) {
+      if (gamepad.buttons[9].pressed) {
+        gamepadPressingStart = true;
+      }
+    }
+  }
+  
+  if (keyIsDown[32] || gamepadPressingStart) {
     if (readyToStartGame && activePlayers >= 2) {
       readyToStartGame = false;
       
